@@ -77,7 +77,147 @@ public class AccesoDatos {
 		}
 		return null;
 	}
+	
+	public ArrayList<HashMap<String, Object>> select(String dominio, String bd, String usr, String clave,
+			String tabla) {
 
+		try {
+			ArrayList<HashMap<String, Object>> registros = new ArrayList<HashMap<String, Object>>();
+			Connection conexion = this.conexionMySQL(dominio, bd, usr, clave);
+			String sql = "SELECT * FROM " + tabla;
+			Statement stm = conexion.createStatement();
+			ResultSet rs = stm.executeQuery(sql);
+			ResultSetMetaData metaData = rs.getMetaData();
+			rs.first();
+			if (rs.getRow() == 0) {
+				System.out.println("NO HAY REGISTROS");
+
+				stm.close();
+				rs.close();
+				return null;
+			} else
+				rs.beforeFirst();
+			while (rs.next()) {
+				HashMap<String, Object> registro = new HashMap<String, Object>();
+				registros.add(registro);
+
+				for (int i = 1; i <= metaData.getColumnCount(); i++) {
+					registro.put(metaData.getColumnName(i), rs.getString(i));
+					System.out.println(metaData.getColumnName(i) + " => " + rs.getString(i));
+				}
+
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+	public ArrayList<HashMap<String, Object>> insert(String dominio, String bd, String usr, String clave,
+			String tabla) {
+
+		try {
+			ArrayList<HashMap<String, Object>> registros = new ArrayList<HashMap<String, Object>>();
+			Connection conexion = this.conexionMySQL(dominio, bd, usr, clave);
+			String sql = "SELECT * FROM " + tabla;
+			Statement stm = conexion.createStatement();
+			ResultSet rs = stm.executeQuery(sql);
+			ResultSetMetaData metaData = rs.getMetaData();
+			rs.first();
+			if (rs.getRow() == 0) {
+				System.out.println("NO HAY REGISTROS");
+
+				stm.close();
+				rs.close();
+				return null;
+			} else
+				rs.beforeFirst();
+			while (rs.next()) {
+				HashMap<String, Object> registro = new HashMap<String, Object>();
+				registros.add(registro);
+
+				for (int i = 1; i <= metaData.getColumnCount(); i++) {
+					registro.put(metaData.getColumnName(i), rs.getString(i));
+					System.out.println(metaData.getColumnName(i) + " => " + rs.getString(i));
+				}
+
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+	public ArrayList<HashMap<String, Object>> update(String dominio, String bd, String usr, String clave,
+			String tabla) {
+
+		try {
+			ArrayList<HashMap<String, Object>> registros = new ArrayList<HashMap<String, Object>>();
+			Connection conexion = this.conexionMySQL(dominio, bd, usr, clave);
+			String sql = "SELECT * FROM " + tabla;
+			Statement stm = conexion.createStatement();
+			ResultSet rs = stm.executeQuery(sql);
+			ResultSetMetaData metaData = rs.getMetaData();
+			rs.first();
+			if (rs.getRow() == 0) {
+				System.out.println("NO HAY REGISTROS");
+
+				stm.close();
+				rs.close();
+				return null;
+			} else
+				rs.beforeFirst();
+			while (rs.next()) {
+				HashMap<String, Object> registro = new HashMap<String, Object>();
+				registros.add(registro);
+
+				for (int i = 1; i <= metaData.getColumnCount(); i++) {
+					registro.put(metaData.getColumnName(i), rs.getString(i));
+					System.out.println(metaData.getColumnName(i) + " => " + rs.getString(i));
+				}
+
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
+	public ArrayList<HashMap<String, Object>> delete(String dominio, String bd, String usr, String clave,
+			String tabla) {
+
+		try {
+			ArrayList<HashMap<String, Object>> registros = new ArrayList<HashMap<String, Object>>();
+			Connection conexion = this.conexionMySQL(dominio, bd, usr, clave);
+			String sql = "SELECT * FROM " + tabla;
+			Statement stm = conexion.createStatement();
+			ResultSet rs = stm.executeQuery(sql);
+			ResultSetMetaData metaData = rs.getMetaData();
+			rs.first();
+			if (rs.getRow() == 0) {
+				System.out.println("NO HAY REGISTROS");
+
+				stm.close();
+				rs.close();
+				return null;
+			} else
+				rs.beforeFirst();
+			while (rs.next()) {
+				HashMap<String, Object> registro = new HashMap<String, Object>();
+				registros.add(registro);
+
+				for (int i = 1; i <= metaData.getColumnCount(); i++) {
+					registro.put(metaData.getColumnName(i), rs.getString(i));
+					System.out.println(metaData.getColumnName(i) + " => " + rs.getString(i));
+				}
+
+			}
+
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+		}
+		return null;
+	}
 	public static void conexionSQLite() {
 		Connection conn = null;
 		try {
