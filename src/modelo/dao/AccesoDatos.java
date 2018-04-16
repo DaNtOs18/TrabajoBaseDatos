@@ -222,7 +222,7 @@ public class AccesoDatos {
 		Connection conn = null;
 		try {
 
-			String url = "jdbc:sqlite:C:\\Users\\Jonny\\Documents\\DAW\\BAE\\tabla_sqlite_pro.db";
+			String url = "jdbc:sqlite:C:\\Users\\jonat\\Documents\\DAW\\BAE\\tabla_sqlite_pro.db";
 			// Crear la conexión
 			conn = DriverManager.getConnection(url);
 

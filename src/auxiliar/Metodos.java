@@ -35,22 +35,22 @@ public class Metodos {
 			case "1":
 				String eleccion1 = "Redirigiendo a la Opción ";
 				System.out.println(eleccion1 + tecleado);
-				ad.select("localhost", "jonathan", "Jonathan", "qwerty", "almacenescajas");
+				ad.select("localhost", "DirectoresDespachos", "Jonathan", "qwerty", "directores");
 				break;
 			case "2":
 				String eleccion2 = "Redirigiendo a la Opción ";
 				System.out.println(eleccion2 + tecleado);
-				ad.insert("localhost", "jonathan", "Jonathan", "qwerty", "almacenescajas");
+				ad.insert("localhost", "DirectoresDespachos", "Jonathan", "qwerty", "directores");
 				break;
 			case "3":
 				String eleccion3 = "Redirigiendo a la Opción ";
 				System.out.println(eleccion3 + tecleado);
-				ad.update("localhost", "jonathan", "Jonathan", "qwerty", "almacenescajas");
+				ad.update("localhost", "DirectoresDespachos", "Jonathan", "qwerty", "directores");
 				break;
 			case "4":
 				String eleccion4 = "Redirigiendo a la Opción ";
 				System.out.println(eleccion4 + tecleado);
-				ad.delete("localhost", "jonathan", "Jonathan", "qwerty", "almacenescajas");
+				ad.delete("localhost", "DirectoresDespachos", "Jonathan", "qwerty", "directores");
 				break;
 			}
 
